@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace stack
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> c = new Stack<int>();
+            c.Push(2);
+            c.Push(4);
+            c.Push(6);
+            c.Push(8);
+            c.Push(10);
+            c.Push(12);
+            c.Push(14);
+            c.Push(16);
+            c.Push(18);
+            c.Push(20);
+            Console.WriteLine("the topmost element of the stack is {0} ", c.Peek());
+            foreach (var i in c)
+            {
+                Console.WriteLine("the elemnets of the stack are {0}", i);
+            }
+
+            c.Pop();
+            c.Pop();
+            c.Pop();
+            c.Pop();
+            c.Pop();
+            c.Pop();
+            Console.WriteLine("after 6 pop operations");
+            Console.WriteLine("the topmost element of the stack is {0} ", c.Peek());
+
+            foreach (int z in c)
+            {
+                Console.WriteLine("the elemnets of the stack are {0}", z);
+            }
+
+            c.Pop();
+            c.Pop();
+            c.Pop();
+            Console.WriteLine("the topmost element of the stack is {0} ", c.Peek());
+            c.Pop();
+            c.Pop();
+            foreach (int z in c)
+            {
+                Console.WriteLine("the elemnets of the stack are {0}", z);
+            }
+            Console.ReadKey();
+
+        }
+    }
+}
