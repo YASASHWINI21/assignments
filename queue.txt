@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Queue
+{
+    class Queue
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Queue");
+            Queue<Int32> qt= new Queue<int>();
+           qt.Enqueue(2);
+           qt.Enqueue(4);
+           qt.Enqueue(6);
+           qt.Enqueue(8);
+           qt.Enqueue(10);
+           qt.Enqueue(12);
+           qt.Enqueue(14);
+           qt.Enqueue(16);
+           qt.Enqueue(18);
+           qt.Enqueue(20);
+            Console.WriteLine("elements in queue are:");
+            foreach (int queue in qt)
+            {
+                Console.WriteLine("elements are:" + queue);
+            }
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("After dequeue elements from queue" + qt.Dequeue());
+            Console.WriteLine("The left of elements in queue are:");
+            foreach (int queue in qt)
+            {
+                Console.WriteLine("elements are:" + queue);
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", qt.Peek());
+            Console.WriteLine("The no.of element in the queue is:{0}", qt.Count());
+            Console.WriteLine("The element exist in the queue is:{0}", qt.Contains(20));
+            Console.WriteLine("The element exist in the queue is:{0}", qt.Contains(12));
+            Console.ReadKey();
+        }
+    }
+}
