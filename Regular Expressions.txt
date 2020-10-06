@@ -1,0 +1,230 @@
+c #program that uses Match,Regex:
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Step 1: create new Regex.
+        Regex regex = new Regex(@"\d+");
+
+        // Step 2: call Match on Regex instance.
+        Match match = regex.Match("yashu98");
+
+        // Step 3: test for Success.
+        if (match.Success)
+        {
+            Console.WriteLine("MATCH VALUE: " + match.Value);
+        }
+    }
+}
+
+
+C# program that uses Regex.Match:
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: the input string.
+        string input = "/content/Raju's daughter.aspx";
+
+        // Part 2: call Regex.Match.
+        Match match = Regex.Match(input, @"content/([A-Za-z0-9\-]+)\.aspx$",
+            RegexOptions.IgnoreCase);
+
+        // Part 3: check the Match for Success.
+        if (match.Success)
+        {
+            // Part 4: get the Group value and display it.
+            string key = match.Groups[1].Value;
+            Console.WriteLine(key);
+        }
+    }
+}
+
+
+
+C# program that uses IsMatch, start and end
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string test = "xxyy";
+
+        // Match the start of a string.
+        if (Regex.IsMatch(test, "^xx"))
+        {
+            Console.WriteLine("Daughter of Raju");
+        }
+
+        // Match the end of a string.
+        if (Regex.IsMatch(test, "yy$"))
+        {
+            Console.WriteLine("Daughter of Jaya");
+        }
+    }
+}
+
+
+C# program that uses NextMatch
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string value = "40 and 50 and 60 yashu 98 is 21 crazy";
+
+        // Step 1: get first match.
+        Match match = Regex.Match(value, @"\d");
+        if (match.Success)
+        {
+            Console.WriteLine(match.Value);
+        }
+
+        // Step 2: get second match.
+        match = match.NextMatch();
+        if (match.Success)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
+
+
+C# program that uses Replace, replaces with pattern
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Replace 2 or more digit pattern with a string.
+        Regex regex = new Regex(@"\d+");
+        string result = regex.Replace("yashu 21 11", "bunny");
+        Console.WriteLine("RESULT: {0}", result);
+    }
+}
+
+
+C# program that uses non-greedy Regex
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string test = "/LG/SONY/";
+        // Version 1: use lazy (or non-greedy) metacharacter.
+        var result = Regex.Match(test, "^/.*?/");
+        if (result.Success)
+        {
+            Console.WriteLine("LAZY: {0}", result1.Value);
+        }
+        // Version 2: default Regex.
+        var result1 = Regex.Match(test, "^/.*/");
+        if (result1.Success)
+        {
+            Console.WriteLine("DEFAULT :     {0}", result2.Value);
+        }
+    }
+}
+
+
+
+C# program that uses static Regex
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // The input string again.
+        string input = "/content/yasashwini.aspx";
+
+        // This calls the static method specified.
+        Console.WriteLine(RegexUtil.MatchKey(input));
+    }
+}
+
+static class RegexUtil
+{
+    static Regex _regex = new Regex(@"/content/([a-z0-9\-]+)\.aspx$");
+    /// <summary>
+    /// This returns the key that is matched within the input.
+    /// </summary>
+    static public string MatchKey(string input)
+    {
+        Match match = _regex.Match(input.ToLower());
+        if (match.Success)
+        {
+            return match.Groups[1].Value;
+        }
+        else
+        {
+            return null;
+        }
+    }
+}
+
+
+
+
+C# program that matches and parses a number
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = " Yash age is 21";
+        Match match = Regex.Match(input, @"\d+");
+        if (match.Success)
+        {
+            int.TryParse(match.Value, out int number);
+            // Show that we have the numbers.
+            Console.WriteLine("NUMBERS: {0}, {1}", number, number + 1);
+        }
+    }
+}
+
+
+
+C# program that shows value, length, index
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        Match m = Regex.Match("21 yashu", @"A.*y");
+        if (m.Success)
+        {
+            Console.WriteLine("Value  = " + m.Value);
+            Console.WriteLine("Length = " + m.Length);
+            Console.WriteLine("Index  = " + m.Index);
+        }
+    }
+}
