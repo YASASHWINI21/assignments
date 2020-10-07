@@ -1,0 +1,177 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GenericConstraint
+{
+    class GConstraint
+    {
+        
+    // default parameter-less constructor
+        class MyClass<T> where T : new()       
+        {
+            public void Test()
+            {
+                Console.WriteLine("This is My DotNet Class");
+                Console.ReadLine();
+            }
+        }
+       class Generic<T> where T : IEmployee
+        {
+            public void Test1()
+            {
+                Console.WriteLine("This Clas implements IEmployee Interface ");
+                Console.ReadLine();
+            }
+        }
+
+        public interface IEmployee
+        {
+        }
+
+        public class Employee : IEmployee
+        {
+            
+
+        }
+
+            public class Customer
+            {
+            }
+
+        
+       
+        static void Main(string[] args)
+        {
+            MyClass<GConstraint> my = new MyClass<GConstraint>();
+            my.Test();
+            Generic<Employee> employee = new Generic<Employee>(); 
+
+            // Generic<Customer> customer = new Generic<Customer>(); 
+        }
+    }
+}
+
+
+C# PROGRAM ON GENERIC CLASS
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Genericclassex
+{
+    
+            class Genericex<T>
+        {
+            public Genericex(T msg)
+            {
+                Console.WriteLine(msg);
+            Console.ReadLine();
+           
+            }
+        
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Genericex<string> gen = new Genericex<string>("This is generic class");
+                Genericex<int> genI = new Genericex<int>(101);
+
+            Genericex<float> getfloat = new Genericex<float>(0.2f);
+            Genericex<Double> getdoubleval = new Genericex<Double>(3.333222222);
+
+        }
+        }
+    }
+
+
+
+
+
+C# PROGRAM ON REFLEX:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+
+namespace Reflectionex
+{
+    class Student
+    {
+
+        // Properties definition 
+        public int StuId { get; set; }
+
+        public string StuName { get; set; }
+
+        // No Argument Constructor 
+        public Student()
+        {
+            StuId = 0;
+            StuName = string.Empty;
+        }
+
+        // Parameterised Constructor 
+        public Student(int eno, string ename)
+        {
+            StuId = sno;
+            StuName = sname;
+        }
+
+        // Method to Display Student Data 
+        public void displayData()
+        {
+            Console.WriteLine("Student ID : {0}", StuId);
+            Console.WriteLine(" Student Name : {0}", StuName);
+        }
+    }
+
+    
+            
+class reflex
+    {
+        static void Main(string[] args)
+        {
+                // Declare Instance of class Assembly 
+                // Call the GetExecutingAssembly method 
+                // to load the current assembly 
+                Assembly executing = Assembly.GetExecutingAssembly();
+
+                // Array to store types of the assembly 
+                Type[] types = executing.GetTypes();
+                foreach (var x in types)
+                {
+                    // Display each type 
+                    Console.WriteLine("Class : {0}", x.Name);
+                Console.ReadLine();
+
+                    // Array to store methods 
+                    MethodInfo[] methods = x.GetMethods();
+                    foreach (var method in methods)
+                    {
+                        // Display each method 
+                        Console.WriteLine("Method : {0}", method.Name);
+
+
+                        // Array to store parameters 
+                        ParameterInfo[] parameters = method.GetParameters();
+                        foreach (var arg in parameters)
+                        {
+                            // Display each parameter 
+                            Console.WriteLine("Parameter : {0} Type : {1}",  arg.Name, arg.ParameterType);
+                        }
+                    Console.ReadLine();
+                    }
+                }
+            }
+        }
+    
