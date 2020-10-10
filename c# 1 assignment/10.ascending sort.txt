@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ascending_order
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = { };
+            int temp = 0;
+
+            
+            Console.WriteLine("Elements of original array: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+            
+            for (int i = 0; i < arr.Length; i++)
+
+           Console.ReadLine();
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine();
+
+            //Displaying elements of array after sorting  
+            Console.WriteLine("Elements of array sorted in ascending order: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i] + " ");
+                Console.ReadKey();
+            }
+        }
+    }
+
+
+
+}
+    

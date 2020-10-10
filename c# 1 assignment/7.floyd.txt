@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace pattern1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter number");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int i,j;
+            for (i=n; i>=1; --i)
+            {
+                for (j = 1; j <= i; ++j)
+                {
+                    Console.Write(j);
+                    Console.Write(" ");
+                }
+                Console.WriteLine(" ");
+                
+            }
+            Console.ReadKey();
+        }
+    }
+}

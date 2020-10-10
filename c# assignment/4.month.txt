@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Days_in_month_of_year
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter year and month");
+            int year = Convert.ToInt32(Console.ReadLine());
+            string month = Console.ReadLine();
+
+            switch (month)
+            {
+                case "january":
+                case "march":
+                case "may":
+                case "july":
+                case "august":
+                case "october":
+                case "december":
+                    Console.WriteLine("having 31 days in a month");
+                    break;
+                case "april":
+                case "june":
+                case "september":
+                case "november":
+                    Console.WriteLine("30 days in a month");
+                    break;
+            }
+
+            if (year % 4 == 0 || year % 400 == 0 && year % 100 != 0)
+            {
+                switch (month)
+                {
+                    case "february":
+                        Console.WriteLine("29 days in a month");
+                        break;
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("28 days in a month");
+            }
+            Console.ReadKey();
+        }
+    }
+}

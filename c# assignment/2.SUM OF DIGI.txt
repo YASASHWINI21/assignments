@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace sum_digits
+{
+    class Program
+    {
+        static int sum = 0;
+        static void Main(string[] args)
+        {
+            int sum1 = 0, rem, s;
+            Console.WriteLine("Enter a number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            while (number != 0)
+            {
+                rem = number % 10;
+                sum = sum + rem;
+                number = number / 10;
+
+            }
+
+            s = sum;
+            Console.WriteLine(sum);
+            if (s > 0)
+                while (s != 0)
+                {
+                    rem = s % 10;
+                    sum = s + rem;
+                    number = s / 10;
+                }
+
+
+            Console.WriteLine(sum1);
+            Console.ReadKey();
+        }
+
+
+
+}
+}
