@@ -1,0 +1,690 @@
+#delegate program
+
+using System;
+
+namespace DifferentMethods
+{
+    public delegate void NameDelegate(string msg);
+
+    public class Person
+    {
+        public string firstName;
+        public string secondName;
+
+        public Person(string firstName, string secondName)
+        {
+            this.firstName = firstName;
+            this.secondName = secondName;
+        }
+
+        public void ShowFirstName(string msg)
+        {
+            Console.WriteLine(msg + this.firstName);
+        }
+
+        public void ShowSecondName(string msg)
+        {
+            Console.WriteLine(msg + this.secondName);
+        }
+    }
+
+    class Program
+    {
+        public static void Main()
+        {
+            var per = new Person("Fabius", "Maximus");
+
+            var nDelegate = new NameDelegate(per.ShowFirstName);
+            nDelegate("Call 1: ");
+
+            nDelegate = new NameDelegate(per.ShowSecondName);
+            nDelegate("Call 2: ");
+        }
+    }
+}
+
+
+
+
+#dictonary program
+
+// C# program to illustrate how 
+// to create a dictionary 
+using System; 
+using System.Collections.Generic; 
+
+class GFG { 
+
+		// Main Method 
+	static public void Main () { 
+		
+		// Creating a dictionary 
+		// using Dictionary<TKey,TValue> class 
+		Dictionary<int, string> My_dict1 = 
+					new Dictionary<int, string>(); 
+			
+		// Adding key/value pairs 
+		// in the Dictionary 
+		// Using Add() method 
+		My_dict1.Add(1123, "Welcome"); 
+		My_dict1.Add(1124, "to"); 
+		My_dict1.Add(1125, "GeeksforGeeks"); 
+			
+		foreach(KeyValuePair<int, string> ele1 in My_dict1) 
+		{ 
+			Console.WriteLine("{0} and {1}", 
+						ele1.Key, ele1.Value); 
+		} 
+		Console.WriteLine(); 
+			
+		// Creating another dictionary 
+		// using Dictionary<TKey,TValue> class 
+	// adding key/value pairs without 
+		// using Add method 
+	Dictionary<string, string> My_dict2 = 
+			new Dictionary<string, string>(){ 
+								{"a.1", "Dog"}, 
+								{"a.2", "Cat"}, 
+								{"a.3", "Pig"} }; 
+		
+		foreach(KeyValuePair<string, string> ele2 in My_dict2) 
+		{ 
+			Console.WriteLine("{0} and {1}", ele2.Key, ele2.Value); 
+		} 
+	} 
+} 
+
+
+
+#multi threading program
+
+// C# program to illustrate the 
+// concept of single threaded model 
+using System; 
+using System.Threading; 
+
+public class Geek { 
+
+	// static method one 
+	public static void method1() 
+	{ 
+
+		// It prints numbers from 0 to 10 
+		for (int I = 0; I <= 10; I++) { 
+
+			Console.WriteLine("Method1 is : {0}", I); 
+
+			// When the value of I is equal to 
+			// 5 then this method sleeps for 
+			// 6 seconds and after 6 seconds 
+			// it resumes its working 
+			if (I == 5) { 
+				Thread.Sleep(6000); 
+			} 
+		} 
+	} 
+
+	// static method two 
+	public static void method2() 
+	{ 
+
+		// It prints numbers from 0 to 10 
+		for (int J = 0; J <= 10; J++) { 
+
+			Console.WriteLine("Method2 is : {0}", J); 
+		} 
+	} 
+} 
+
+// Driver Class 
+public class GFG { 
+
+	// Main Method 
+	static public void Main() 
+	{ 
+
+		// Calling static methods 
+		Geek.method1(); 
+		Geek.method2(); 
+	} 
+} 
+
+
+#single threading
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace singlethreading
+{
+
+    class Mthreads
+
+    {
+	//method1
+        public static void Sum()
+        {
+            
+            for(int i = 0;i <= 20;i++)
+            {
+                 Console.WriteLine("Sum starts at " +i);
+            }
+            
+            Console.WriteLine("******Sum  ends at*****");
+        }
+
+          //method2 
+        public static void Multiple()
+        {
+            
+            for(int i = 0;i <= 5=;i++)
+            {
+                 Console.WriteLine("Multiple starts at " +i);
+		 if(i == 25)
+                 {
+			Console.WriteLine("main thread is going to sleep......");
+                        Thread.Sleep(1000000);
+			Console.WriteLine("main thread wokeup!");
+                 }
+            }
+            
+            Console.WriteLine("***********Multiple  ends at*****");
+        }
+
+        //method3	
+        public static void Division()
+        {
+    
+            for(int i = 0;i <= 50;i++)
+            {
+                 Console.WriteLine("Division starts at " +i);
+            }
+            
+            Console.WriteLine("*****Division ends at*****");
+        }
+
+    }
+	Console.ReadKey(); 
+
+
+      	  
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Main Thread Started");
+            Mthreads ob = new Mthreads();
+            double result = 0;
+
+            Thread T1 = new Thread(() => {res1= ob.Sum(); });
+            Thread T2 = new Thread(() => { res2=ob.Multiple(); });
+	    Thread T3 = new Thread(() => { res3=obj.method3(); });
+            
+
+            T1.Start();T2.Start(); T3.Start();
+            T1.Join();T2.Join(); T3.Join();
+
+            Console.WriteLine(res1);
+            Console.WriteLine("Sum execution completed");
+            Console.WriteLine("*********************************************************");
+                                
+            Console.WriteLine(res2);
+            Console.WriteLine("Multiple execution completed");
+            Console.WriteLine("*********************************************************");
+	                         
+            Console.WriteLine(res3);
+            Console.WriteLine("Division execution completed");
+            Console.WriteLine("*********************************************************");
+
+            Console.WriteLine();
+            Console.WriteLine("Main Thread completed");
+            Console.ReadLine();
+
+
+        }
+    
+ 
+}
+
+
+
+
+#regular expresions
+
+
+using System;    
+using System.Collections.Generic;    
+using System.Linq;    
+using System.Text;    
+using System.Text.RegularExpressions;    
+    
+namespace RegularExpression1    
+{    
+    class Program    
+    {    
+        static void Main(string[] args)    
+        {       
+            Regex r = new Regex(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}");    
+            //class Regex Repesents an immutable regular expression.    
+    
+            string[] str = { "+91-9678967101", "9678967101", "+91-9678-967101", "+91-96789-67101", "+919678967101"};    
+            //Input strings for Match valid mobile number.    
+    
+            foreach(string s in str)    
+            {    
+                Console.WriteLine("{0} {1} a valid mobile number.", s,    
+                    r.IsMatch(s) ? "is":"is not");    
+            //The IsMatch method is used to validate a string or     
+           //to ensure that a string conforms to a particular pattern.    
+            }    
+        }    
+    }    
+}
+
+
+
+
+
+#regex match
+
+using System;
+using System.Text.RegularExpressions;
+
+public class Example
+{
+   public static void Main()
+   {
+      string pattern = @"\ba\w*\b";
+      string input = "An extraordinary day dawns with each new day.";
+      Match m = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+      if (m.Success)
+         Console.WriteLine("Found '{0}' at position {1}.", m.Value, m.Index);
+   }
+}
+// The example displays the following output:
+//        Found 'An' at position 0.
+
+
+
+#ismatch,start and end 
+
+
+
+
+using System;
+using System.Text.RegularExpressions;
+
+public class Example
+{
+   public static void Main()
+   {
+      string[] partNumbers= { "1298-673-4192", "A08Z-931-468A", 
+                              "_A90-123-129X", "12345-KKA-1230", 
+                              "0919-2893-1256" };
+      Regex rgx = new Regex(@"^[a-zA-Z0-9]\d{2}[a-zA-Z0-9](-\d{3}){2}[A-Za-z0-9]$");
+      foreach (string partNumber in partNumbers)
+         Console.WriteLine("{0} {1} a valid part number.", 
+                           partNumber, 
+                           rgx.IsMatch(partNumber) ? "is" : "is not");
+   }
+}
+
+
+
+#next match
+
+
+using System;
+using System.Text.RegularExpressions;
+
+class Example
+{
+   static void Main()
+   {
+      string text = "One car red car blue car";
+      string pat = @"(\w+)\s+(car)";
+
+      // Instantiate the regular expression object.
+      Regex r = new Regex(pat, RegexOptions.IgnoreCase);
+
+      // Match the regular expression pattern against a text string.
+      Match m = r.Match(text);
+      int matchCount = 0;
+      while (m.Success)
+      {
+         Console.WriteLine("Match"+ (++matchCount));
+         for (int i = 1; i <= 2; i++)
+         {
+            Group g = m.Groups[i];
+            Console.WriteLine("Group"+i+"='" + g + "'");
+            CaptureCollection cc = g.Captures;
+            for (int j = 0; j < cc.Count; j++)
+            {
+               Capture c = cc[j];
+               System.Console.WriteLine("Capture"+j+"='" + c + "', Position="+c.Index);
+            }
+         }
+         m = m.NextMatch();
+      }
+   }
+}
+
+
+#replace with pattern
+
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // This is the input string we are replacing parts from.
+        string input = "Dot Net Not Perls";
+
+        // Use Regex.Replace to replace the pattern in the input.
+        // ... The pattern N.t indicates three letters.
+        // ... N, any character, and t.
+        string output = Regex.Replace(input, "N.t", "NET");
+
+        // Write the output.
+        Console.WriteLine(input);
+        Console.WriteLine(output);
+    }
+}
+
+
+#parse number 
+
+
+
+// Int32.Parse(String) Method 
+using System; 
+
+class GFG { 
+
+	// Main Method 
+	public static void Main() 
+	{ 
+
+		// passing different values 
+		// to the method to check 
+		checkParse("2147483647"); 
+		checkParse("214,7483,647"); 
+		checkParse("-2147483"); 
+		checkParse(" 2183647 "); 
+	} 
+
+	// Defining checkParse method 
+	public static void checkParse(string input) 
+	{ 
+
+		try { 
+
+			// declaring Int32 variable 
+			int val; 
+
+			// getting parsed value 
+			val = Int32.Parse(input); 
+			Console.WriteLine("'{0}' parsed as {1}", input, val); 
+		} 
+
+		catch (FormatException) { 
+			Console.WriteLine("Can't Parsed '{0}'", input); 
+		} 
+	} 
+} 
+
+
+#ignore case
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // The input string has an uppercase trailing letter.
+        const string value = "carroT";
+
+        // Print result of IsMatch method:
+        // ... With IgnoreCase;
+        // ... And without any options set.
+        Console.WriteLine(Regex.IsMatch(value, "carrot", RegexOptions.IgnoreCase));
+        Console.WriteLine(Regex.IsMatch(value, "carrot"));
+    }
+}
+
+#value , length and index
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        Match m = Regex.Match("111 aaaccbbb", @"a.*b");
+        if (m.Success)
+        {
+            Console.WriteLine("Value  = " + m.Value);
+            Console.WriteLine("Length = " + m.Length);
+            Console.WriteLine("Index  = " + m.Index);
+	    Console.ReadLine();
+        }
+    }
+}
+
+
+#Queue operation
+
+
+// C# program to illustrate how 
+// get topmost elements of the queue 
+using System; 
+using System.Collections; 
+
+public class GFG { 
+	static public void Main() 
+	{ 
+
+		// Create a queue 
+		// Using Queue class 
+		Queue my_queue = new Queue(); 
+
+		// Adding elements in Queue 
+		// Using Enqueue() method 
+		my_queue.Enqueue("GFG"); 
+		my_queue.Enqueue("Geeks"); 
+		my_queue.Enqueue("GeeksforGeeks"); 
+		my_queue.Enqueue("geeks"); 
+		my_queue.Enqueue("Geeks123"); 
+
+		Console.WriteLine("Total elements present in my_queue: {0}", 
+													my_queue.Count); 
+
+		// Obtain the topmost element of my_queue 
+		// Using Dequeue method 
+		Console.WriteLine("Topmost element of my_queue"
+					+ " is: {0}", my_queue.Dequeue()); 
+						
+
+		Console.WriteLine("Total elements present in my_queue: {0}", 
+													my_queue.Count); 
+
+		// Obtain the topmost element of my_queue 
+		// Using Peek method 
+		Console.WriteLine("Topmost element of my_queue is: {0}", 
+											my_queue.Peek()); 
+
+		Console.WriteLine("Total elements present in my_queue: {0}", 
+													my_queue.Count); 
+	} 
+} 
+
+
+#stack operation
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DemoApplication
+{
+ class Program
+ {
+  static void Main(string[] args)
+  {
+   Stack st = new Stack();
+   st.Push(1);
+   st.Push(2);
+   st.Push(3);
+   
+   st.Pop();
+
+   foreach (Object obj in st)
+   {
+    Console.WriteLine(obj);
+   }
+    Console.ReadKey();
+  }
+ }
+}
+
+
+
+#windows forms
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace winform
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button();
+            b.Text = "Over Here";
+            b.Size = new Size(100, 50);
+            b.Location = new Point(200, 200);
+            this.Controls.Add(b);
+           
+            //  using delegate(anonymous method)
+		//method 1	
+
+            b.Click += delegate (object sender1, EventArgs e1)
+            {
+                System.Windows.Forms.MessageBox.Show("Computer science ");
+            };
+		
+		//method 2
+            b.Click += delegate (object sender2, EventArgs e2)
+            {
+                System.Windows.Forms.MessageBox.Show("Electronics and Communication");
+            };
+
+		//method 3
+
+            b.Click += delegate (object sender3, EventArgs e3)
+            {
+                System.Windows.Forms.MessageBox.Show("Information Technology");
+            };
+
+		 
+
+        }
+        
+
+    }
+}
+
+
+
+#list operations
+
+
+
+// C# Program to remove the element at 
+// the specified index of the List<T> 
+using System; 
+using System.Collections.Generic; 
+
+class Geeks { 
+
+	// Main Method 
+	public static void Main(String[] args) 
+	{ 
+
+		// Creating an List<T> of Integers 
+		List<int> firstlist = new List<int>(); 
+
+		// Adding elements to List 
+		firstlist.Add(17); 
+		firstlist.Add(19); 
+		firstlist.Add(21); 
+		firstlist.Add(9); 
+		firstlist.Add(75); 
+		firstlist.Add(19); 
+		firstlist.Add(73); 
+
+		Console.WriteLine("Elements Present in List:\n"); 
+
+		int p = 0; 
+
+		// Displaying the elements of List 
+		foreach(int k in firstlist) 
+		{ 
+			Console.Write("At Position {0}: ", p); 
+			Console.WriteLine(k); 
+			p++; 
+		} 
+
+		Console.WriteLine(" "); 
+
+		// removing the element at index 3 
+		Console.WriteLine("Removing the element at index 3\n"); 
+
+		// 9 will remove from the List 
+		// and 75 will come at index 3 
+		firstlist.RemoveAt(3); 
+
+		int p1 = 0; 
+
+		// Displaying the elements of List 
+		foreach(int n in firstlist) 
+		{ 
+			Console.Write("At Position {0}: ", p1); 
+			Console.WriteLine(n); 
+			p1++; 
+		} 
+	} 
+} 
+    
