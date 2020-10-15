@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>javascript</title>
+    <style type="text/css">
+        body
+        {
+            background-color:blue;
+        }
+        
+    </style>
+    
+
+</head>
+<body id="body1">
+<script type="text/javascript">
+    function f1() {
+        window.alert("hi u have clicked the button");
+    }
+    function changeh1content() {
+        document.getElementById('hid').innerHTML = " welcome ";
+    }
+    function changetheimagesize() {
+        document.getElementById('img1').width = '100';
+    }
+    function changebackground() {
+        document.getElementById('body1').style.backgroundColor ='blue';
+    }
+    function hide() {
+        document.getElementById('hid2').style.display = 'none';
+    }
+</script>
+    <h1 id="hid">good evening </h1>
+    <img src="picture.jpg" width="500" height="500" id="img1" />
+    <button onclick="f1()">click me</button>
+    <button onclick="changeh1content()">click me to change the h2 content</button>
+    <button onclick="changetheimagesize()"> click me to change the image size</button>
+    <button onclick="changebackground()">click me to change the background</button>
+    <button onclick="hide()">click me</button>
+
+</body>
+</html>

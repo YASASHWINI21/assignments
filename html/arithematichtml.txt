@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ABMD</title>
+</head>
+<body>
+    <form action="" name="Arithmetic_operations">
+        <input type="text" name="FirstNumber" /><br /><br />
+        <input type="text" name="SecondNumber" /><br /><br />
+        <input type="button" onclick="add()" value="Addition" />
+        <input type="button" onclick="sub()" value="Subtraction" />
+        <input type="button" onclick="mul()" value="Multiplication" />
+        <input type="button" onclick="div()" value="Division" />
+        <input type="text" name="result" />
+
+
+    </form>
+
+    <script type="text/javascript">
+        function add() {
+            FirstNumber = parseInt(Arithmetic_operations.FirstNumber.value);
+            SecondNumber = parseInt(Arithmetic_operations.SecondNumber.value);
+            result = FirstNumber + SecondNumber;
+            window.alert("the result after addition is " + result);
+            Arithmetic_operations.result.value = result;
+
+        }
+        function sub() {
+            FirstNumber = parseInt(Arithmetic_operations.FirstNumber.value);
+            SecondNumber = parseInt(Arithmetic_operations.SecondNumber.value);
+            result = FirstNumber - SecondNumber;
+            window.alert("the result after subtraction is " + result);
+            Arithmetic_operations.result.value = result;
+
+        }
+        function mul() {
+            FirstNumber = parseInt(Arithmetic_operations.FirstNumber.value);
+            SecondNumber = parseInt(Arithmetic_operations.SecondNumber.value);
+            result = FirstNumber * SecondNumber;
+            window.alert("the result after multiplication is " + result);
+            Arithmetic_operations.result.value = result;
+
+        }
+        function div() {
+            FirstNumber = parseInt(Arithmetic_operations.FirstNumber.value);
+            SecondNumber = parseInt(Arithmetic_operations.SecondNumber.value);
+            result = FirstNumber / SecondNumber;
+            window.alert("the result after division is " + result);
+            Arithmetic_operations.result.value = result;
+
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Table</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var a = prompt("Enter your number");
+        var b = prompt("enter your limit");
+        for (var s = 1; s <= b; s++) {
+            document.write(a + "*" + s + "=" + a * s + "<br>");
+        }
+    </script>
+    
+    
+</body>
+</html>
