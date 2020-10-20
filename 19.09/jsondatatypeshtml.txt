@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Json Datatypes</title>
+</head>
+<body>
+    <p>Json Datatypes</p>
+    <p id="demo"></p>
+    <script>
+        var text = { "name": "Yashu", "age": 21, "city": "Visakhapatnam" };
+        var x = text.name;
+        document.getElementById("demo").innerHTML = x;
+    </script>
+</body>
+</html>

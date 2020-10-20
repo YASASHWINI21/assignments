@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        body 
+        {
+            background-image: url(flower.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+
+        button 
+        {
+            background-color: aqua;
+            width: 70px;
+            height: 30px;
+            shape-outside: border-box;
+        }
+    </style>
+
+</head>
+<body onload="sweet()">
+
+    <center>
+        <h1>Login</h1>
+
+        First name: <input type="text" id="fname" onfocus="myFunction(this.id)" onchange="myFunction()"><br>
+        Last name: <input type="text" id="lname" onfocus="myFunction(this.id)" onchange="myFunction()"><br>
+        EmailId: <input type="email" id="email" onfocus="myFunction(this.id)"><br>
+        Password: <input type="password" id="password" onfocus="myFunction(this.id)">
+
+    </center><br>
+    <button id="sweet" onclick="myfunc(this)">Submit</button>
+
+
+
+    <script>
+        function sweet()
+        {
+            alert("Page Loaded");
+        }
+
+
+
+
+        function myFunction(x)
+        {
+            document.getElementById(x).style.background = "pink";
+            var a = document.getElementById("fname");
+            a.value = a.value.toUpperCase();
+            var b = document.getElementById("lname");
+            b.value = b.value.toUpperCase();
+
+        }
+        function myfunc()
+        {
+            alert("login Successful");
+        }
+    </script>
+
+</body>
+</html>

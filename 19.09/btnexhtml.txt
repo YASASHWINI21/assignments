@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        .a {
+            background-color: violet;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+
+        .b {
+            background-color: indigo;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+
+        .c {
+            background-color: skyblue;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+
+        .d {
+            background-color: green;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+
+        .e {
+            background-color: yellow;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+
+        .f {
+            background-color: orange;
+            border: 2px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="a">Hello World!!</h1>
+
+    <h2 class="b">Welcome to DXC</h2>
+    <h3 class="c">We are Learning Java Script</h3>
+    <h4 class="d">Java Script makes our page responsive</h4>
+    <h5 class="e">Java script runs through browser</h5>
+    <h6 class="f">Java Script has different objects</h6>
+
+
+
+    <p>Click the button below to disable the button above.</p>
+
+    <button id="myBtn" onclick="myFunction()">Try it</button>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myBtn").disabled = true;
+            alert("button disabled");
+        }
+    </script>
+
+
+</body>
+</html>
