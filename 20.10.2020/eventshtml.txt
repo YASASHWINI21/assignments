@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h1").dblclick(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h2").mousedown(function () {
+                alert("mouse down over h2")
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#hid").mouseup(function () {
+                alert("mouse up over h1")
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h3").mouseenter(function () {
+                alert("u r intelligent");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h4").mouseleave(function () {
+                alert("programming is fun");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "cyan");
+            });
+
+
+            $("input").blur(function () {
+                $(this).css("background-color", "red");
+            });
+
+            $("input").submit(function () {
+                $(this).css("background-color", "yellow");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#i1").keydown(function () {
+                $("#i1").css("background-color", "yellow");
+            });
+            $("#i1").keyup(function () {
+                $("#i1").css("background-color", "pink");
+            });
+
+
+            var i = 0;
+
+            $("#i1").keypress(function () {
+                $("span").text(i += 1);
+            });
+        });
+    </script>
+    <script>
+        var x = 0;
+        $(document).ready(function () {
+            $("div").scroll(function () {
+                $("#s1").text(x += 1);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("window").unload(function () {
+                alert("Goodbye!");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("img").load(function () {
+                alert("Image loaded.");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#i1").change(function () {
+                alert("The text has been changed.");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function () {
+                alert("Submitted");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Keypressed: <span>0</span></p>
+    <p>hello</p>
+    <h1>how r u</h1>
+    <h1 id="hid">this is mouse up</h1>
+    <h2>this is funny</h2>
+    <h3>thank u</h3>
+    <h4>yes it is fun</h4>
+    Name: <input type="text" name="FullName" />
+    address: <input type="text" name="Address" />
+    Email:<input id="i1" type="text" />
+    <form action="">
+        number:<input type="text" />
+        <input id="i2" type="submit" value="submit" />
+    </form>
+    <p>Try the scrollbar in the div</p>
+
+    <div style="border:1px solid black;width:200px;height:100px;overflow:scroll;">
+        In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'
+    </div>
+
+    <p>Scrolled <span id="s1">0</span> times.</p>
+    <h5>When you click <a href="https://w3schools.com">this link</a>, or close the window, an alert box will be triggered.</h5>
+    <img src="https://www.bing.com/th?id=OIP.xt6VpWlEE_4QB6kGExk0VwHaIG&w=89&h=100&c=8&rs=1&qlt=90&pid=3.1&rm=2" width="304" height="236">
+
+    <p><b>Note:</b> Depending on the browser, the load event may not trigger if the image is cached.</p>
+</body>
+</html >

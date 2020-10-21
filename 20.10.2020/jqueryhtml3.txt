@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery class</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                //adding class
+                $("h1,p").addClass("y");
+
+                $("#div2").addClass("x");
+                $("#div1").addClass("yellow x");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                //removing class
+                $("h2").removeClass("white");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                //toggle class
+                $("h1,p").toggleClass("white");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("h3").css({ "background-color": "blue", "font-size": "200%" });
+            });
+        });
+    </script>
+    <style>
+        .y {
+            font-weight: bold;
+            font-size: 32px;
+            color: cyan;
+        }
+
+        .x {
+            font-weight: bold;
+            font-size: 32px;
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .white {
+            color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h2 class="white">this is h2</h2>
+    <h3>this is h3</h3>
+    <p>changing the color.</p>
+    <p>changing the color of para 2</p>
+
+    <div id="div1">This is some important text!</div><br>
+    <div id="div2">This is some important text1!</div><br>
+
+    <button>Add classes to elements</button>
+</body>
+</html>
