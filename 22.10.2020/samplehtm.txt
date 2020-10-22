@@ -1,0 +1,12 @@
+<html>
+<head>
+	<title>samplepage</title>
+</head>
+<body>
+	<font size="5">
+	Programming is in html code
+	</font>
+	<h3>.net programming</h3>
+	<p>virtual directory example</p>
+</body>
+</html>

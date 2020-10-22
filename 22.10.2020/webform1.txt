@@ -1,0 +1,18 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="AspSecondApplication.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Second Asp Website</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%Response.Write("This is my second asp website"); %><br />
+            <%Response.Write("This is Asp.net web application(.net framework) empty project"); %>
+        </div>
+        <h4>It is very important concept</h4>
+    </form>
+</body>
+</html>
