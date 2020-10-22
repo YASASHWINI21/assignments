@@ -1,0 +1,12 @@
+<html>
+<head>
+	<title>Web Server</title>
+</head>
+<body>
+	<font size="5">
+	Hello World
+	</font>
+	<h3>This is webserver example</h3>
+	<p>Programs in webserver is very intresting</p>
+</body>
+</html>
