@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>websites</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    alert($("#dxc").attr("href"));
+  });
+});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("img").animate({
+					left: "130px",
+					height: "20px",
+					width:"10px",
+				});
+
+			});
+		});
+
+	</script>
+</head>
+<body>
+
+	<p><a href="https://www.google.com" id="dxc">GOOGLE</a></p>
+
+	<button>Show href Value</button>
+
+
+	<br>
+
+	
+	<br /><img src="C:\JQUERYLINK\LORD Thimmappa.jpg"><br />BhakthaVatsalaaa!!!!!!!!!<img/>
+	<br><button >Click to view Srinivasa</button>
+
+</body>
+</html>

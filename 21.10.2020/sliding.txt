@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>JQuerySliding</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#flip").click(function () {
+				$("#panel").slideDown("slow");
+			});
+		});
+
+
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("#flip1").click(function () {
+				$("#panel1").slideUp("fast");
+
+			});
+		});
+
+
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("#flip2").click(function () {
+				$("#panel2").slideDown("100000");
+			});
+		});
+
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("#flip3").click(function () {
+				$("#panel3").slideToggle("fast");
+			});
+		});
+
+	</script>
+
+	<style>
+		#panel, #flip {
+			background-color: #808080;
+			text-align: center;
+			padding: 10px;
+			border: solid 1px #000000;
+		}
+
+		#panel {
+			padding: 50px;
+			display: none;
+		}
+
+		#panel1, #flip1 {
+			background-color: #ffd800;
+			text-align: left;
+			padding: 20px;
+			border: solid 2px #170202;
+		}
+
+		#panel1 {
+			padding: 80px;
+		}
+
+		#panel2, #flip2 {
+			background-color: #c3aeae;
+			text-align: right;
+			padding: 40px;
+			border: solid 5px #d02222;
+		}
+
+		#panel2 {
+			padding: 60px;
+			display: none;
+		}
+
+		#flip3, #panel3 {
+			background-color: lawngreen;
+			text-align: start;
+			padding: 60px;
+			border: solid 5px #170202;
+		}
+
+		#panel3 {
+			padding: 50px;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div id="flip">Click to slide down panel.</div>
+	<div id="panel">Programming is fun.</div>
+
+	<div id="flip1">Click to slide Up panel.</div>
+	<div id="panel1">Programming is very crazy.</div>
+
+	<div id="flip2">Click to slide down panel.</div>
+	<div id="panel2">DXC Technology.</div>
+
+	<div id="flip3">Click to Toggle and slide UP panel.</div>
+	<div id="panel3">DXC Technology is fab!!!!!.</div>
+
+
+</body>
+</html>
