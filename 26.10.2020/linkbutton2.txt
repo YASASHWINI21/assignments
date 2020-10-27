@@ -1,0 +1,45 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="linkbutton.aspx.cs" Inherits="Assignmentlinkbutton.linkbutton" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:LinkButton ID="LinkButton1" runat="server" OnCommand="LinkButton1_Command" Text="Select First" CommandName="Selection" CommandArgument="1" /><br />
+                         <asp:LinkButton ID="LinkButton2" runat="server" OnCommand="LinkButton2_Command" Text="Select Second" CommandName="Selection" CommandArgument="2" />
+        </div>
+        <asp:Label ID="Label1" runat="server" />
+    </form>
+</body>
+</html>
+ 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Assignmentlinkbutton
+{
+    public partial class linkbutton : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected void LinkButton1_Command(object sender, EventArgs e)
+        {
+            Label1.Text = "you choose" + e.CommandName + "item" + e.CommandArgument;
+        }
+        protected void LinkButton2_Command(object sender, EventArgs e)
+        {
+            Label1.Text = "you choose" + e.CommandName + "item" + e.CommandArgument;
+        }
+    }
+}

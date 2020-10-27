@@ -1,0 +1,40 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="linkbuttonurl.aspx.cs" Inherits="Assignmentlinkbutton.linkbuttonurl" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:LinkButton ID="Link1" runat="server" PostBackUrl="~/linkbuttonproperties.aspx" OnClick="Link1_Click"></asp:LinkButton>
+            <asp:LinkButton ID="link2" Visible="true" runat="server"></asp:LinkButton>
+        </div>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </form>
+</body>
+</html>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Assignmentlinkbutton
+{
+    public partial class linkbuttonurl : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Link1_Click(object sender, EventArgs e)
+        {
+            Label1.Text = "LinkButton Properties";
+        }
+    }
+}

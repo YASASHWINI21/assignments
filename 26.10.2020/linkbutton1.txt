@@ -1,0 +1,46 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="linkbutton.aspx.cs" Inherits="calenderasp.linkbutton" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+  
+    <form id="form1" runat="server">
+        <h3>It is a hyperlink style button</h3>
+        <div>
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Facebook</asp:LinkButton><br />
+        </div>
+        <p>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        </p>
+
+    </form>
+</body>
+</html>
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace calenderasp
+{
+    public partial class linkbutton : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Label1.Text = "Welcome to Facebook"; 
+        }
+    }
+}
