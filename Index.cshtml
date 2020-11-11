@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>
+        Welcome to MusicStore
+    </h1>
+    @* <div class="jumbotron">
+            <h2>Welcome to MusicStore</h2>
+        </div>*@
+    @*<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>*@
+    @*<p class="lead">Welcome to MusicStore</p>*@
+    <p style="font-family:Cambria;">Select the Music u like</p>
+    @* <p><a href="https://ASP.NET" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p><a href="Classic" class="btn btn-primary btn-lg">Classic &raquo;</a></p>
+        <p><a href="Hip-Pop" class="btn btn-primary btn-lg">Hip-Pop &raquo;</a></p>
+        <p><a href="Romantic" class="btn btn-primary btn-lg">Romantic &raquo;</a></p>*@
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Registration form</h2>
+            <table style="width:100%; background-color:antiquewhite" align="left">
+                <tr>
+                    <td class="auto-style1">UserName</td>
+                    <td class="auto-style2">
+                        @*<asp:TextBox ID="TextBox1" runat="server" Width="260px" AutoPostBack="True"></asp:TextBox>*@
+                        <input id="Text1" type="text" Width="260px" />
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Enter Valid Name" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Password</td>
+                    <td class="auto-style2">
+                        @*<asp:TextBox ID="TextBox2" runat="server" TextMode="Password" Width="256px"></asp:TextBox>*@
+                        <input id="Password1" type="password" Width="260px" />
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </table>
+            <input id="Checkbox1" type="checkbox" />
+            <label>Remember Me</label><br /><br />
+            <button style="background-color:aqua">Submit</button>
+        </div>
+        <div class="col-md-5" style="padding-right;background-color:antiquewhite">
+            <h2>Music and Album</h2>
+            <table style="width:100%; height:1000%; background-color:crimson" align="right" border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Music</th>
+                        <th>Album</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Classic</td>
+                        <td>Illayaraja Music</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Western</td>
+                        <td>Vintage Rocks</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Rock</td>
+                        <td>Bts Music</td>
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Select any Music u want</h3>
+
+            <input id="Checkbox1" type="checkbox" name="Classic Album" value="Music" />
+            <label>Classic</label><br />
+            <input id="Checkbox1" type="checkbox" name="Western Album" value="Music" />
+            <label>Western</label><br />
+            <input id="Checkbox1" type="checkbox" name="Romantic Album" value="Music" />
+            <label>Romantic</label><br />
+            <input id="Checkbox1" type="checkbox" name="Hip-Hop Album" value="Music" />
+            <label>Hip-Hop</label><br />
+            <input id="Checkbox1" type="checkbox" name="Rock Album" value="Music" />
+            <label>Rock</label><br />
+        </div>
+        <div class="col-md-4">
+            <h2>What type of music do u want.........</h2>
+            <select id="Select1" style="background-color:antiquewhite">
+                <option>Classic</option>
+                <option>Hip-Hop</option>
+                <option>Romantic</option>
+                <option>Western</option>
+                <option>Rock</option>
+
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Select the singer</h2>
+            <ul>
+
+                <li><input id="Radio1" type="radio" />BTS</li>
+
+
+                <li><input id="Radio1" type="radio" />Justin Beiber </li>
+
+                <li><input id="Radio1" type="radio" />Miley Cyrus</li>
+
+                <li><input id="Radio1" type="radio" />Selena Gomez</li>
+
+                <li><input id="Radio1" type="radio" />Luis Fonsi</li>
+            </ul>
+        </div>
+    </div>
+    <br /><br />
+</div>
+
+@*<div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                Welcome to ASP.NET MVC 5
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p> Hello World  from ASP.nET MVC5 Framework  in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>We are learning and it is delighted to do so...............</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
