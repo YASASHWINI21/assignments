@@ -1,0 +1,149 @@
+@{
+	ViewBag.Title = "Home Page";
+}
+
+
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title></title>
+</head>
+<body >
+	<div class="container">
+
+		<table class=" table table-lg bg-warning text-black">
+			<thead>
+				<tr>
+					<th>Registration Form</th>
+					<th> Music</th>
+					<th>type</th>
+					<th>singer</th>
+					<th>songs</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					
+					<td>
+						<form>
+							<div class="form-group">
+								<label for="email"><b>Email:</b></label>
+								<input type="email" class="form-control" placeholder="Enter email" id="email">
+							</div>
+							<div class="form-group">
+								<label for="pwd"><b>Password:</b></label>
+								<input type="password" class="form-control" placeholder="Enter password" id="pwd">
+							</div>
+							<div class="form-group form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox"> Remember me
+								</label>
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</td>
+					<td>
+						<div class="container">
+
+							<table class="table table-bordered " >
+								<thead>
+									<tr>
+										<th>Music Collection</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Carnatic</td>
+
+									</tr>
+									<tr>
+										<td>Classic</td>
+
+									</tr>
+									<tr>
+										<td>POP</td>
+
+									</tr>
+									<tr>
+										<td>Romantic</td>
+
+									</tr>
+									<tr>
+										<td>Retro</td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+					</td>
+					<td>
+						<div>
+							<label class="form-check-label">
+								<input type="checkbox" class="form-check-input" value="">Romantic
+							</label>
+						</div>
+
+
+						<div>
+							<label class="form-check-label">
+								<input type="checkbox" class="form-check-input" value="">Pop
+							</label>
+						</div>
+						<div>
+							<label class="form-check-label">
+								<input type="checkbox" class="form-check-input" value="">Classic
+							</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio">kishorekumar
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio">Neha
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio">shreya
+							</label>
+						</div>
+					</td>
+
+					<td>
+						<div class="dropdown">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+								Select Song
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">m1.mp3</a>
+								<a class="dropdown-item" href="#">m2.mp3</a>
+								<a class="dropdown-item" href="#">m3.mp3</a>
+							</div>
+						</div>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
