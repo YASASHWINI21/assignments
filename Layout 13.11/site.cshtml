@@ -1,0 +1,63 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_site</title>
+	@RenderSection("headsection",required:false)
+</head>
+<body>
+    <div> 
+		<table border="1" width="800" align="center" cellspacing="5" cellpadding="5">
+			<tr style="background-color:palevioletred;color:black;text-align:center;font-size:larger;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+				<td colspan="2" style="font-size:larger">DXC Technology</td>
+			</tr>
+			<tr height="300" style="background-color:powderblue">
+				<td width="250"><ul style="font-size:xx-large;">
+	<li>
+		@Html.ActionLink("Home", "Home")
+	</li>
+	<li>
+		@Html.ActionLink("About", "About")
+	</li>
+	<li>
+		@Html.ActionLink("Contact", "Contact")
+	</li>
+
+</ul>
+					</td>
+				<td width="550">
+					<div style="height:500px ;width:700px;text-align:center" >	@RenderBody()
+					</div>
+
+
+					<div style="height:100px">
+						@if (IsSectionDefined("adsSection"))
+						{
+							@RenderSection("adsSection", required: false)
+						}
+						else
+						{
+							<div align="center">
+								<i>ads here</i>
+							</div>
+						}
+					</div>
+				</td>
+			</tr>
+			<tr style="background-color:palevioletred;color:black;text-align:center;font-size:x-large">
+				<td colspan="2">
+					&copy;copyright 2020<br />
+					Faculty| Courses|Projects|Development
+				</td>
+			</tr>
+		</table>
+
+		
+    </div>
+</body>
+</html>
