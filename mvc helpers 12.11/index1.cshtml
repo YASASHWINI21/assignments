@@ -1,0 +1,32 @@
+﻿@using MVChelpers
+@model employee
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body style="text-align:center">
+    <div style="background-color:coral">
+        <h1 style="color:aqua"><b>Registration Form</b></h1>
+        <label>Name</label> @Html.TextBoxFor(x => x.Name)<br /><br />
+        <label>Password</label>@Html.PasswordFor(x => x.Password)<br /><br />
+        <label>Male</label>@Html.RadioButtonFor(x => x.Gender, "Male")<br /><br />
+        <label>Female</label>@Html.RadioButtonFor(x => x.Gender, "female")<br /><br />
+        <label>Address</label> @Html.TextBoxFor(x => x.Address)<br /><br />
+        <label>Hobbies</label>@Html.CheckBoxFor(x => x.isHobbies)<br /><br />
+        <label>Courses</label>@Html.DropDownListFor(x => x.StudentCourses, new SelectList(Enum.GetValues(typeof(Courses))),
+"Select Courses")<br /><br />
+        <label>Skills</label>@Html.DropDownListFor(x => x.SudentSkills, new SelectList(Enum.GetValues(typeof(Skills))),
+"Select Skills")<br /><br />
+
+        <button style="background-color:cadetblue">Submit</button>
+    </div>
+</body>
+</html>

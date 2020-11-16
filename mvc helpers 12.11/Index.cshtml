@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Click ME", "About")
+    </div>
+    @using (Html.BeginForm("MyForm"))
+    {
+        <div><label>Username:@Html.TextBox("TextBox1")</label></div>
+        <div><label>Fullname:@Html.TextBox("TextBox1", "Yasashwini")</label></div>
+        <div><label>Password:@Html.Password("Password1")</label></div>
+        <div><label>Accept terms and Conditions:@Html.CheckBox("CheckBox1")</label></div>
+
+        <div>
+            <label>
+                Male
+                @Html.RadioButton("Gender", "Male", true, new { id = "Male" })
+            </label>
+        </div>
+        <div>
+            <label>
+                Female
+                @Html.RadioButton("Gender", "Female", true, new { id = "Female" })
+            </label>
+
+
+
+        </div><br />
+        <div>
+            Select Course:@Html.DropDownList("Courses",new List<SelectListItem> {
+           new SelectListItem{Text="Select Course",Value="1",Selected=true},
+new SelectListItem{Text="CSharpProgramming",Value="2",Selected=true},
+new SelectListItem{Text="DOTNET Programming",Value="3",Selected=true},
+new SelectListItem{Text="ASP DOtNET Programming",Value="4",Selected=true},
+new SelectListItem{Text="ADO DOTNET Programming",Value="5",Selected=true},
+
+})
+        </div><br />
+    }
+    <div>
+        Select Hobbies:@Html.ListBox("Hobbies",new List<SelectListItem> {
+     
+new SelectListItem{Text="Dancing",Value="2",Selected=true},
+new SelectListItem{Text="Singing",Value="3",Selected=true},
+new SelectListItem{Text="Story Writing",Value="4",Selected=true},
+new SelectListItem{Text="Reading",Value="5",Selected=true},
+new SelectListItem{Text="Watching Movies",Value="6",Selected=true},
+new SelectListItem{Text="Playing with Pets",Value="7",Selected=true},
+},new { @class="form-control"})
+    </div><br />
+    <button>Submit up</button>
+</body>
+</html>
+
+@*Note:We can jump from one controller or another controller by using Action Link *@
