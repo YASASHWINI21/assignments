@@ -1,0 +1,9 @@
+@model    IEnumerable<PartialViews.Models.Employee>
+@{
+	ViewBag.Title = "Index";
+	int n = 10;
+}
+@foreach(var item in Model)
+{
+	@Html.Partial("_Card",item)
+}
