@@ -1,0 +1,120 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+	<div>
+		<div>
+			<h1>This is single line razor expression</h1><br />
+			<h2>concatination:@("Priscilla" + "katherine")</h2>
+		</div>
+		<div>
+			<h1>This is multi line razor expression</h1><br />
+			@{
+				var a = "priscilla ";
+				var b = "katherine ";
+				var c = "Thota";
+			}
+			<h2>Concat of a,b,c is:@(a + b + c)</h2>
+		</div>
+		<h2>Example of If</h2>
+		<div>
+			@{
+				var d = "priscilla";
+				var e = "katherine";
+			}
+		</div>
+		<div>
+			@if (d == e)
+			{
+				<h2>Both are equal</h2>
+			}
+			else
+			{
+				<h2>Both are not equal</h2>
+			}
+		</div>
+		<h2>Example of Foreach</h2>
+		<div>
+			@{
+				var list = new List<string>() { "priscilla", "katherine" };
+			}
+		</div>
+		<div>
+			@foreach (var names in list)
+			{
+				<h2>The name present in list or not:@names.Contains("katherine")</h2>
+			}
+		</div>
+		<h2>Example of Terinary operator</h2>
+		<div>
+			<h2>
+				@(d == "Priscilla" ? "Both are equal" : "Both are not equal");<br />
+				@(e == "priscilla" ? "Both are equal" : "Both are not equal");<br />
+			</h2>
+		</div>
+		<h2>Example of For</h2>
+		<div>
+			@for (char n = 'a'; n <= 'z'; n++)
+			{
+				<h2>The letters are:</h2>
+				<h2>@n</h2>
+			}
+		</div>
+
+	</div>
+	<div>
+		<h2>This is single line expression</h2>
+		<h2>Addition of 10,20 and 30 is:@(10 + 20 + 30)</h2>
+	</div>
+	<div>
+		<h2>Thi is multi line expression</h2>
+		@{
+			var x = 10;
+			var y = 20;
+			var z = 30;
+			var m = x * y * z;
+			<h2>The value of d is:@m</h2>
+		}
+	</div>
+	<div>
+		<h2>Example of If and Terinary</h2>
+		@{
+			var i = 5;
+		}
+		@if(i == 5)
+		{
+			<h2>Both are equal</h2>
+		}
+		else
+		{
+			<h2>Both are not equal</h2>
+		}
+		<h2>@(i % 2 == 0 ? "e is even" : "e is odd")</h2>
+	</div>
+	<h2>For Example</h2>
+	<div>
+		@for (int j = 100; j <= 105; j++)
+		{
+			<h2>The numbers are:@j</h2>
+		}
+	</div>
+	<h2>Foreach Example</h2>
+	<div>
+		@{
+			var numbers = new List<Int32>() { 200, 210, 220, 230, 240, 250 };
+		}
+		@foreach (var num in numbers)
+		{
+			<h2>The numbers are:@num</h2>
+		}
+	</div>
+</body>
+</html>
